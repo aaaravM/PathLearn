@@ -1,8 +1,2 @@
-[build]
-provider = "nixpacks"
-providers = ["python"]
-paths = ["backend"]
-# The manual buildCommand is REMOVED to let Nixpacks handle pip internally.
-
 [deploy]
-startCommand = "cd backend && python3 app.py"
+environment = { ROOT_DIR = "backend" }
