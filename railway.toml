@@ -1,8 +1,8 @@
 [build]
 provider = "nixpacks"
 providers = ["python"]
-# Changed to use the 'pip3' executable directly
-buildCommand = "pip3 install -r backend/requirements.txt"
+paths = ["backend"]
+# The manual buildCommand is REMOVED to let Nixpacks handle pip internally.
 
 [deploy]
 startCommand = "cd backend && python3 app.py"
