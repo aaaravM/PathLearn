@@ -1,5 +1,6 @@
 [build]
 builder = "railway-buildpack"
+buildCommand = "pip install -r backend/requirements.txt"
 
 [start]
-cmd = "python backend/app.py"
+cmd = "cd backend && python app.py"
