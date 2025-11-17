@@ -1,2 +1,2 @@
-[deploy]
-environment = { ROOT_DIR = "backend" }
+[start]
+cmd = "python backend/app.py"
