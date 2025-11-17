@@ -1,0 +1,5 @@
+[build]
+builder = "railway-buildpack"
+
+[start]
+cmd = "python backend/app.py"
