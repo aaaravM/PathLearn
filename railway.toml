@@ -1,4 +1,6 @@
 [build]
+provider = "nixpacks"
+providers = ["python"]
 buildCommand = "python3 -m pip install -r backend/requirements.txt"
 
 [deploy]
