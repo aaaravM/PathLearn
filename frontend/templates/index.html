@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn — Autonomous Learning Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+    <link rel="stylesheet" href="../static/css/landing.css">
+</head>
+<body class="page-landing">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/courses" class="nav-link">Courses</a>
+                <a href="/community" class="nav-link">Resources</a>
+                <a href="/analytics" class="nav-link">Analytics</a>
+                <a href="/profile" class="nav-link">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="landing-hero" data-reveal>
+            <div>
+                <div class="glow-pill">DEMO READY • ML + RAG + DRL</div>
+                <h1>Learning that evolves every time you breathe.</h1>
+                <p>
+                    PathLearn fuses Deep Reinforcement Learning, RNN memory, and a HuggingFace-powered
+                    Meta-Llama-3 instructor into one adaptive learning engine. It is built to feel like
+                    a studio mentor, a personal researcher, and a tactical coach—always recalibrating to your career.
+                </p>
+                <div class="hero-actions">
+                    <a href="/dashboard" class="btn btn-primary btn-large">
+                        Launch Autonomous Session <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/courses" class="btn btn-secondary btn-large">
+                        Browse 200+ Tracks
+                    </a>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Active Concepts</span>
+                        <div class="stat-value"><span data-counter="2354">0</span></div>
+                        <p>Continuously refreshed through RAG</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Lesson Variations</span>
+                        <div class="stat-value"><span data-counter="12850">0</span></div>
+                        <p>No two students receive the same sequence</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Career Templates</span>
+                        <div class="stat-value"><span data-counter="48">0</span></div>
+                        <p>From astrophysics to computational law</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <h4>AI INSIGHT</h4>
+                    <strong>Perception Surge</strong>
+                    <p>You solve abstract physics 32% faster after a coding warmup block.</p>
+                </div>
+                <div class="hero-card">
+                    <h4>DRL DECISION</h4>
+                    <strong>Shift to Applied Labs</strong>
+                    <p>RNN noticed hesitation in symbolic derivations. Next unit uses NASA datasets.</p>
+                </div>
+                <div class="hero-card">
+                    <h4>CAREER THREAD</h4>
+                    <strong>Astrophysicist</strong>
+                    <p>Injecting orbital mechanics and astronomy archives into every example.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-heading" data-reveal>
+            <div>
+                <div class="glow-pill">WHY WE WIN HACKATHONS</div>
+                <h2>Beyond courses. It's an autonomous learning engine.</h2>
+            </div>
+            <a href="/analytics" class="btn btn-secondary">See AI Stack</a>
+        </section>
+
+        <section class="feature-grid" data-reveal>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-diagram-project"></i></div>
+                <h3>Deep Reinforcement Learning Teacher</h3>
+                <p>Optimizes your difficulty curve, decides when to review, and orchestrates practice vs. exposition vs. projects.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-wave-square"></i></div>
+                <h3>RNN Learning Memory</h3>
+                <p>Tracks hesitation, attempts, and forgetting curve. Predicts when you’ll drop below 70% retention and intervenes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                <h3>Meta-Llama-3 via HuggingFace</h3>
+                <p>All lessons, breakdowns, and explanations are generated live through the HuggingFace router with your API key.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-satellite"></i></div>
+                <h3>Career-Directed Retrieval</h3>
+                <p>Real NASA PDFs, medical imaging notes, law case citations, or startups docs feed the RAG pipeline for context.</p>
+            </div>
+        </section>
+
+        <section class="section-heading" data-reveal>
+            <div>
+                <div class="glow-pill">200+ TRACKS</div>
+                <h2>Choose any discipline, from calculus to constitutional law.</h2>
+            </div>
+            <a href="/courses" class="btn btn-primary">Launch catalog</a>
+        </section>
+
+        <section class="category-grid" data-reveal>
+            <div class="category-card">
+                <h3>Mathematics Universe</h3>
+                <span>K–12 • Pre-Calc • Multivariable • Statistics</span>
+            </div>
+            <div class="category-card">
+                <h3>Science & Engineering</h3>
+                <span>AP Physics • Organic Chemistry • Fluid Dynamics</span>
+            </div>
+            <div class="category-card">
+                <h3>Computer Science</h3>
+                <span>Algorithms • Systems • ML • Cybersecurity</span>
+            </div>
+            <div class="category-card">
+                <h3>Humanities & Law</h3>
+                <span>World History • Civics • Constitutional Law</span>
+            </div>
+            <div class="category-card">
+                <h3>Business & Economics</h3>
+                <span>Micro/Macro • Finance • Entrepreneurship</span>
+            </div>
+            <div class="category-card">
+                <h3>Health & Medicine</h3>
+                <span>Anatomy • Pharmacology • Public Health</span>
+            </div>
+        </section>
+
+        <section class="section-heading" data-reveal>
+            <div>
+                <div class="glow-pill">SOCIAL PROOF</div>
+                <h2>Live projects from seeded students.</h2>
+            </div>
+            <a href="/community" class="btn btn-secondary">View profiles</a>
+        </section>
+
+        <section class="testimonials-grid" data-reveal>
+            <div class="testimonial-card">
+                <p>“The DRL tutor switched me from derivations to telescope data the moment it sensed hesitation. That’s not a chatbot—that’s a co-pilot.”</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AR</div>
+                    <div>
+                        <strong>Ava Ramirez</strong>
+                        <div>Astrophysics track</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“I answer law essays while PathLearn pulls precedent from RAG and the HuggingFace instructor critiques my logic in-context.”</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MP</div>
+                    <div>
+                        <strong>Mia Patel</strong>
+                        <div>Computational law track</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“It knew I was tired, lowered difficulty, and still tied the problem to biomedical sensors. This is how solo learning beats tutors.”</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LC</div>
+                    <div>
+                        <strong>Leon Chen</strong>
+                        <div>Biomedical engineering track</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner" data-reveal>
+            <div class="glow-pill">FINAL CALL</div>
+            <h2>Replace tutors. Impress judges. Win the hackathon.</h2>
+            <p>Spin up the Flask backend, drop in your HuggingFace API key, and watch PathLearn build a personalized curriculum that no generic LLM can replicate.</p>
+            <div class="hero-actions" style="justify-content:center;">
+                <a href="/dashboard" class="btn btn-primary btn-large">Open Dashboard</a>
+                <a href="/analytics" class="btn btn-secondary btn-large">See Analytics</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask me about any topic...">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/landing.js"></script>
+</body>
+</html>

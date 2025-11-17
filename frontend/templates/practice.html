@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Practice Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/courses" class="nav-link">Courses</a>
+                <a href="/practice" class="nav-link">Practice</a>
+                <a href="/community" class="nav-link">Resources</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content" style="max-width: 1200px;">
+        <section data-reveal>
+            <div class="glow-pill">ADAPTIVE DRILLS</div>
+            <h1>Practice Arena</h1>
+            <p class="subtext">We’ll jump to the exact lesson/problem you’re on. Sign in required.</p>
+            <div style="margin-top:16px;">
+                <button class="btn btn-primary" id="continueBtn">Continue current lesson</button>
+                <span id="practiceStatus" class="subtext"></span>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask for a challenge">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="../static/js/main.js"></script>
+    <script>
+    const btn = document.getElementById('continueBtn');
+    const statusEl = document.getElementById('practiceStatus');
+    btn.addEventListener('click', async () => {
+        statusEl.textContent = 'Checking your current track...';
+        const sess = await fetch('/api/session').then(r => r.json());
+        if (!sess.authed) {
+            statusEl.textContent = 'Sign in to continue practice.';
+            window.location.href = '/auth';
+            return;
+        }
+        const dash = await fetch('/api/dashboard').then(r => r.json());
+        const track = (dash.tracks || [])[0];
+        if (!track) {
+            statusEl.textContent = 'No active track yet. Pick a course first.';
+            window.location.href = '/courses';
+            return;
+        }
+        window.location.href = `/lesson?course=${track.course_id}&track=${track.track_id}&unit=${track.next_unit || 0}`;
+    });
+    </script>
+</body>
+</html>

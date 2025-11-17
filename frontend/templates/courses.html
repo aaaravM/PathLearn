@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Course Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+<body class="page-courses">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/courses" class="nav-link">Courses</a>
+                <a href="/practice" class="nav-link">Practice</a>
+                <a href="/community" class="nav-link">Resources</a>
+                <a href="/analytics" class="nav-link">Analytics</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+                <a href="/profile" class="profile-link">
+                    <div class="profile-avatar"><i class="fas fa-user"></i></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<main class="main-content courses-page">
+    <section class="card course-hero" data-reveal>
+        <div class="glow-pill">ALL SUBJECTS • 200+ TRACKS</div>
+        <h1>Build your own academy.</h1>
+        <p>
+            Choose a subject, a track, and a career lens. PathLearn talks to HuggingFace’s Meta-Llama-3,
+            stitches in RAG context, and generates a personalized lesson stream with mastery checkpoints.
+        </p>
+        <div class="filters">
+            <input type="text" id="courseSearch" placeholder="Search tracks or subjects..." />
+            <select id="careerSelect"></select>
+        </div>
+    </section>
+
+    <section class="card" data-reveal>
+        <div class="glow-pill">PLACEMENT & RECOMMENDATIONS</div>
+        <h2>Tell us your grade level and pace.</h2>
+        <p class="subtext">If you’re ahead, units will auto-complete and we’ll jump you forward.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <select id="placementGrade" style="padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white;">
+                <option value="average">On track</option>
+                <option value="ahead">Ahead</option>
+                <option value="behind">Need review</option>
+            </select>
+            <button class="btn btn-primary" id="runPlacement">Run placement on selected track</button>
+            <button class="btn btn-secondary" id="generatePlacementTest">Generate placement test</button>
+            <span id="placementStatus" class="subtext"></span>
+        </div>
+    </section>
+
+        <section data-reveal>
+            <div class="subject-grid" id="subjectGrid"></div>
+        </section>
+
+        <section class="tracks-panel" id="tracksPanel" data-reveal>
+            <div>
+                <div class="glow-pill">TRACK DETAILS</div>
+                <h2 id="selectedSubject">Choose a subject to view tracks.</h2>
+                <p class="subtext">K–12 acceleration, AP mastery, collegiate depth, and professional studio labs.</p>
+                <div class="curriculum-map" id="curriculumMap"></div>
+            </div>
+            <div id="trackList">
+                <p class="subtext">Select a subject to see its adaptive tracks.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Need a recommendation?">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/courses.js"></script>
+</body>
+</html>

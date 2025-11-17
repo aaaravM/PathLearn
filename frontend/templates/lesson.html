@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+    <link rel="stylesheet" href="../static/css/lesson.css">
+</head>
+<body class="page-lesson">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/courses" class="nav-link">Courses</a>
+                <a href="/practice" class="nav-link">Practice</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+                <a href="/analytics" class="nav-link">Analytics</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content lesson-page">
+        <div class="lesson-header">
+            <div class="breadcrumb">
+                <a href="/courses">Courses</a>
+                <span>›</span>
+                <span id="lesson-course">Loading...</span>
+            </div>
+            <h1 class="lesson-title" id="lesson-topic">Fetching adaptive lesson...</h1>
+            <div class="lesson-meta" id="lesson-meta">
+                <div class="meta-item"><i class="fas fa-signal"></i> Difficulty <span id="lesson-difficulty">--</span></div>
+                <div class="meta-item"><i class="fas fa-clock"></i> ~<span id="lesson-time">--</span> minutes</div>
+                <div class="meta-item"><i class="fas fa-book"></i> Unit <span id="lesson-unit">--</span></div>
+                <div class="meta-item"><i class="fas fa-briefcase"></i> <span id="lesson-career">Career-Aligned</span></div>
+            </div>
+        </div>
+
+    <div class="lesson-content-card">
+        <div class="lesson-content theory-card" id="lesson-content">
+            <p>The lesson content is generated live via HuggingFace + RAG. Hang tight...</p>
+        </div>
+    </div>
+
+        <div class="practice-section">
+            <div class="practice-header">
+                <h2>Practice Problems</h2>
+                <div class="timer" id="lessonTimer">Time: 0:00</div>
+            </div>
+            <div id="questionsContainer"></div>
+            <div class="progress-tracker">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="lessonProgress"></div>
+                </div>
+                <div id="progressText" class="subtext">0 completed</div>
+            </div>
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary btn-icon" id="prevUnitBtn">
+                    <i class="fas fa-arrow-left"></i> Previous Lesson
+                </button>
+                <button class="btn btn-primary btn-icon" id="nextUnitBtn">
+                    Next Lesson <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask for hints or explanations">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/lesson-runtime.js"></script>
+</body>
+</html>

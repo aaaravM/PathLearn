@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/settings" class="nav-link">Settings</a>
+                <a href="/community" class="nav-link">Resources</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content" style="max-width: 800px;">
+        <section class="card" data-reveal>
+            <h1>Settings</h1>
+            <form id="settingsForm" class="grid-2">
+                <label>
+                    <span>Career Path</span>
+                    <select id="settingsCareer"></select>
+                </label>
+                <label>
+                    <span>Notification Email</span>
+                    <input type="email" placeholder="you@pathlearn.com">
+                </label>
+                <label>
+                    <span>Preferred Focus Block</span>
+                    <select>
+                        <option>Morning flow</option>
+                        <option>Afternoon sprint</option>
+                        <option>Night shift</option>
+                    </select>
+                </label>
+            </form>
+            <button class="btn btn-primary" id="saveSettings">Save</button>
+        </section>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Need help?">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="../static/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const res = await fetch('/api/courses');
+            const data = await res.json();
+            const select = document.getElementById('settingsCareer');
+            select.innerHTML = (data.career_paths || []).map(path => `<option>${path}</option>`).join('');
+            document.getElementById('saveSettings').addEventListener('click', async () => {
+                await fetch('/api/career-path', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({career_path: select.value})
+                });
+                window.showGlobalToast('Settings saved!', 'success');
+            });
+        });
+    </script>
+</body>
+</html>

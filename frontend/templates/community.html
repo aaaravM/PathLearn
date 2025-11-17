@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Career Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/community" class="nav-link">Resources</a>
+                <a href="/profile" class="nav-link">Profile</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content" style="max-width: 1100px;">
+        <section data-reveal>
+            <div class="glow-pill">CAREER / COLLEGE / DEGREE</div>
+            <h1>Resources tailored to your path</h1>
+            <p>Select a career and degree goal to see curated links and learning playlists.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+                <select id="careerSelect" style="padding:12px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <option value="">-- Select Career --</option>
+                    <option>Software Engineer</option>
+                    <option>Data Scientist</option>
+                    <option>Astrophysicist</option>
+                    <option>Biomedical Engineer</option>
+                    <option>Doctor/Surgeon</option>
+                    <option>Lawyer</option>
+                </select>
+                <select id="degreeSelect" style="padding:12px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <option value="">-- Degree Goal --</option>
+                    <option>BS/BA</option>
+                    <option>MS</option>
+                    <option>PhD</option>
+                    <option>Pre-med</option>
+                    <option>JD</option>
+                </select>
+                <button class="btn btn-primary" id="loadResources">Show Resources</button>
+            </div>
+        </section>
+
+        <section class="grid-2" id="resourceGrid" style="margin-top:24px;"></section>
+    </main>
+
+    <script src="../static/js/main.js"></script>
+    <script>
+    const resources = {
+        "Software Engineer": {
+            "BS/BA": [
+                { title: "Algorithms + Systems", link: "https://ocw.mit.edu", type: "Course Playlist" },
+                { title: "Internship prep", link: "https://leetcode.com", type: "Practice" },
+                { title: "Frontend fundamentals", link: "https://react.dev/learn", type: "Docs" }
+            ],
+            "MS": [
+                { title: "Distributed Systems", link: "https://read.seas.harvard.edu/~kohler/class/cs261/syl.html", type: "Reading list" },
+                { title: "ML Engineering", link: "https://huggingface.co/learn", type: "Hands-on" }
+            ]
+        },
+        "Data Scientist": {
+            "BS/BA": [
+                { title: "Statistics + Probability", link: "https://khanacademy.org/math/statistics-probability", type: "Course" },
+                { title: "Python + Data", link: "https://pandas.pydata.org/docs/", type: "Docs" }
+            ],
+            "MS": [
+                { title: "Causal Inference", link: "https://mixtape.scunning.com/", type: "Book" },
+                { title: "ML Systems", link: "https://www.manning.com/books/machine-learning-systems", type: "Book" }
+            ]
+        },
+        "Astrophysicist": {
+            "PhD": [
+                { title: "Astro-ph preprints", link: "https://arxiv.org/list/astro-ph/new", type: "Research" },
+                { title: "Exoplanet datasets", link: "https://exoplanetarchive.ipac.caltech.edu/", type: "Data" }
+            ]
+        },
+        "Biomedical Engineer": {
+            "BS/BA": [
+                { title: "Biomechanics fundamentals", link: "https://ocw.mit.edu/courses/2-75j-medical-device-design-fall-2010/", type: "Course" },
+                { title: "Signals & Systems for bio", link: "https://www.coursera.org/learn/biosignals", type: "Course" }
+            ]
+        },
+        "Doctor/Surgeon": {
+            "Pre-med": [
+                { title: "MCAT Prep", link: "https://www.khanacademy.org/test-prep/mcat", type: "Prep" },
+                { title: "Clinical shadowing tips", link: "https://www.aamc.org/", type: "Guide" }
+            ]
+        },
+        "Lawyer": {
+            "JD": [
+                { title: "Constitutional Law sourcebook", link: "https://www.law.cornell.edu/constitution_conan", type: "Reference" },
+                { title: "Legal research basics", link: "https://guides.ll.georgetown.edu/intro", type: "Guide" }
+            ]
+        },
+        "Mechanical Engineer": {
+            "BS/BA": [
+                { title: "Statics & Dynamics", link: "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", type: "Course" },
+                { title: "Thermo & Fluids", link: "https://ocw.mit.edu/courses/2-005-thermal-fluids-engineering-i-fall-2013/", type: "Course" }
+            ]
+        },
+        "Teacher/Educator": {
+            "BS/BA": [
+                { title: "Learning Sciences basics", link: "https://www.coursera.org/learn/learning-how-to-learn", type: "Course" },
+                { title: "EdTech tools", link: "https://teachwithtech.umd.edu/", type: "Guide" }
+            ]
+        }
+    };
+
+    document.getElementById('loadResources').addEventListener('click', () => {
+        const career = document.getElementById('careerSelect').value;
+        const degree = document.getElementById('degreeSelect').value;
+        const target = document.getElementById('resourceGrid');
+        target.innerHTML = '';
+        const list = resources[career]?.[degree] || [];
+        if (!list.length) {
+            target.innerHTML = '<p class="subtext">No resources for that combination yet.</p>';
+            return;
+        }
+        list.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <h3>${item.title}</h3>
+                <p>${item.type}</p>
+                <a class="btn btn-secondary" href="${item.link}" target="_blank">Open</a>
+            `;
+            target.appendChild(card);
+        });
+    });
+    </script>
+</body>
+</html>

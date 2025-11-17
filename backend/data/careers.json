@@ -1,0 +1,240 @@
+{
+  "software_engineer": {
+    "name": "Software Engineer",
+    "icon": "💻",
+    "description": "Design, develop, and maintain software applications and systems",
+    "relevant_subjects": ["computer_science", "mathematics", "engineering"],
+    "key_skills": [
+      "Programming",
+      "Algorithms & Data Structures",
+      "System Design",
+      "Problem Solving"
+    ],
+    "example_contexts": {
+      "math": "Algorithms use mathematical concepts like logarithms to optimize search operations",
+      "physics": "Graphics engines apply physics principles for realistic simulations",
+      "chemistry": "Computational chemistry software models molecular interactions"
+    }
+  },
+  "data_scientist": {
+    "name": "Data Scientist",
+    "icon": "📊",
+    "description": "Extract insights from data using statistical analysis and machine learning",
+    "relevant_subjects": ["mathematics", "computer_science", "statistics"],
+    "key_skills": [
+      "Statistics & Probability",
+      "Machine Learning",
+      "Data Visualization",
+      "Python/R Programming"
+    ],
+    "example_contexts": {
+      "math": "Linear algebra powers machine learning algorithms and neural networks",
+      "statistics": "Hypothesis testing validates whether patterns in data are significant",
+      "biology": "Bioinformatics analyzes genetic sequences to identify disease markers"
+    }
+  },
+  "doctor": {
+    "name": "Doctor/Surgeon",
+    "icon": "🏥",
+    "description": "Diagnose and treat patients using medical knowledge and procedures",
+    "relevant_subjects": ["biology", "chemistry", "anatomy", "physics"],
+    "key_skills": [
+      "Human Anatomy",
+      "Biochemistry",
+      "Medical Diagnostics",
+      "Patient Care"
+    ],
+    "example_contexts": {
+      "biology": "Understanding cellular respiration helps diagnose metabolic disorders",
+      "chemistry": "Pharmacology relies on chemical reactions to develop effective medications",
+      "physics": "MRI machines use magnetic resonance to create detailed body scans"
+    }
+  },
+  "biomedical_engineer": {
+    "name": "Biomedical Engineer",
+    "icon": "🔬",
+    "description": "Design medical devices and systems combining biology with engineering",
+    "relevant_subjects": ["biology", "engineering", "physics", "mathematics"],
+    "key_skills": [
+      "Biomechanics",
+      "Medical Device Design",
+      "Signal Processing",
+      "Tissue Engineering"
+    ],
+    "example_contexts": {
+      "physics": "Ultrasound imaging uses wave physics to visualize internal organs",
+      "biology": "Artificial organs require deep understanding of biological systems",
+      "math": "Differential equations model blood flow through cardiac devices"
+    }
+  },
+  "mechanical_engineer": {
+    "name": "Mechanical Engineer",
+    "icon": "⚙️",
+    "description": "Design and build mechanical systems from engines to robots",
+    "relevant_subjects": ["physics", "mathematics", "engineering"],
+    "key_skills": [
+      "Thermodynamics",
+      "Mechanics & Kinematics",
+      "CAD Design",
+      "Materials Science"
+    ],
+    "example_contexts": {
+      "physics": "Newton's laws govern the motion of mechanical linkages in robots",
+      "math": "Calculus optimizes engine efficiency by modeling combustion processes",
+      "chemistry": "Material properties determine which alloys work best for components"
+    }
+  },
+  "astrophysicist": {
+    "name": "Astrophysicist",
+    "icon": "🌌",
+    "description": "Study celestial objects and the fundamental laws of the universe",
+    "relevant_subjects": ["physics", "mathematics", "astronomy"],
+    "key_skills": [
+      "Orbital Mechanics",
+      "Spectroscopy",
+      "Computational Physics",
+      "Data Analysis"
+    ],
+    "example_contexts": {
+      "physics": "General relativity explains how massive objects bend spacetime",
+      "math": "Differential equations predict planetary orbits and satellite trajectories",
+      "chemistry": "Stellar spectroscopy reveals the chemical composition of stars"
+    }
+  },
+  "neuroscientist": {
+    "name": "Neuroscientist",
+    "icon": "🧠",
+    "description": "Research the brain and nervous system to understand cognition and behavior",
+    "relevant_subjects": ["biology", "psychology", "chemistry"],
+    "key_skills": [
+      "Neuroanatomy",
+      "Electrophysiology",
+      "Cognitive Science",
+      "Research Methods"
+    ],
+    "example_contexts": {
+      "biology": "Action potentials transmit signals between neurons in milliseconds",
+      "chemistry": "Neurotransmitters like dopamine regulate mood and motivation",
+      "physics": "fMRI uses magnetic fields to map brain activity during tasks"
+    }
+  },
+  "financial_analyst": {
+    "name": "Financial Analyst",
+    "icon": "💰",
+    "description": "Analyze financial data to guide investment and business decisions",
+    "relevant_subjects": ["mathematics", "economics", "statistics"],
+    "key_skills": [
+      "Financial Modeling",
+      "Risk Analysis",
+      "Market Research",
+      "Excel & Data Tools"
+    ],
+    "example_contexts": {
+      "math": "Compound interest calculations determine investment growth over time",
+      "statistics": "Regression analysis predicts stock price movements",
+      "economics": "Supply and demand curves explain market price fluctuations"
+    }
+  },
+  "lawyer": {
+    "name": "Lawyer",
+    "icon": "⚖️",
+    "description": "Advocate for clients and interpret laws in legal proceedings",
+    "relevant_subjects": ["law", "government", "history", "economics"],
+    "key_skills": [
+      "Legal Research",
+      "Contract Law",
+      "Critical Thinking",
+      "Argumentation"
+    ],
+    "example_contexts": {
+      "history": "Constitutional law evolved from historical precedents like Marbury v. Madison",
+      "economics": "Antitrust law prevents monopolies that harm market competition",
+      "government": "Separation of powers ensures checks and balances in legal systems"
+    }
+  },
+  "environmental_scientist": {
+    "name": "Environmental Scientist",
+    "icon": "🌍",
+    "description": "Study environmental problems and develop solutions for sustainability",
+    "relevant_subjects": ["biology", "chemistry", "environmental_science"],
+    "key_skills": [
+      "Ecology",
+      "Environmental Chemistry",
+      "Field Research",
+      "Data Collection"
+    ],
+    "example_contexts": {
+      "biology": "Ecosystem dynamics show how species interact in food webs",
+      "chemistry": "Carbon cycle explains how greenhouse gases trap heat",
+      "math": "Population models predict species decline from habitat loss"
+    }
+  },
+  "chemical_engineer": {
+    "name": "Chemical Engineer",
+    "icon": "🧪",
+    "description": "Design processes to convert raw materials into valuable products",
+    "relevant_subjects": ["chemistry", "engineering", "mathematics"],
+    "key_skills": [
+      "Chemical Reactions",
+      "Process Design",
+      "Thermodynamics",
+      "Safety Protocols"
+    ],
+    "example_contexts": {
+      "chemistry": "Catalysts speed up reactions in industrial chemical production",
+      "math": "Rate equations optimize yield in pharmaceutical manufacturing",
+      "physics": "Heat transfer principles design efficient chemical reactors"
+    }
+  },
+  "architect": {
+    "name": "Architect",
+    "icon": "🏛️",
+    "description": "Design buildings and structures that are functional and aesthetic",
+    "relevant_subjects": ["mathematics", "physics", "art"],
+    "key_skills": [
+      "Structural Design",
+      "CAD Software",
+      "Building Codes",
+      "Spatial Reasoning"
+    ],
+    "example_contexts": {
+      "math": "Geometry determines load-bearing angles in building foundations",
+      "physics": "Structural forces must be calculated to prevent building collapse",
+      "art": "Golden ratio creates aesthetically pleasing architectural proportions"
+    }
+  },
+  "economist": {
+    "name": "Economist",
+    "icon": "📈",
+    "description": "Analyze production, distribution, and consumption of goods and services",
+    "relevant_subjects": ["economics", "mathematics", "statistics"],
+    "key_skills": [
+      "Economic Theory",
+      "Econometrics",
+      "Policy Analysis",
+      "Forecasting"
+    ],
+    "example_contexts": {
+      "math": "Elasticity measures how demand changes with price variations",
+      "statistics": "Time series analysis forecasts unemployment trends",
+      "government": "Fiscal policy uses government spending to stabilize economies"
+    }
+  },
+  "pharmacist": {
+    "name": "Pharmacist",
+    "icon": "💊",
+    "description": "Dispense medications and advise on their safe and effective use",
+    "relevant_subjects": ["chemistry", "biology", "health_science"],
+    "key_skills": [
+      "Pharmacology",
+      "Drug Interactions",
+      "Patient Counseling",
+      "Pharmaceutical Calculations"
+    ],
+    "example_contexts": {
+      "chemistry": "Molecular structure determines how drugs bind to receptors",
+      "biology": "Understanding metabolism helps predict drug half-life in the body",
+      "math": "Dosage calculations ensure safe medication amounts by body weight"
+    }
+  }
+}

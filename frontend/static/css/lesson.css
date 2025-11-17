@@ -1,0 +1,254 @@
+.lesson-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.lesson-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.lesson-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lesson-content-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.lesson-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #2d3748;
+}
+
+.theory-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 16px;
+    overflow: visible;
+}
+
+.lesson-content h2,
+.lesson-content h3 {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.lesson-content .evidence {
+    background: #f1f5f9;
+    border-left: 4px solid #667eea;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+.lesson-content h2 {
+    font-size: 1.75rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #1a202c;
+}
+
+.lesson-content h3 {
+    font-size: 1.5rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: #2d3748;
+}
+
+.lesson-content p {
+    margin-bottom: 16px;
+}
+
+.lesson-content strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.practice-section {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.practice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.question-card {
+    background: #f7fafc;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.question-number {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.question-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 24px;
+}
+
+.response-area textarea,
+.response-area input {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 1rem;
+    color: #1a202c;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option:hover {
+    border-color: #667eea;
+    transform: translateX(8px);
+}
+
+.option.selected {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.option.correct {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+}
+
+.option.incorrect {
+    background: #f56565;
+    border-color: #f56565;
+    color: white;
+}
+
+.option-letter {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.option.selected .option-letter,
+.option.correct .option-letter,
+.option.incorrect .option-letter {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.question-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.explanation-box {
+    background: #e6fffa;
+    border-left: 4px solid #48bb78;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+}
+
+.explanation-title {
+    font-weight: 600;
+    color: #2c7a7b;
+    margin-bottom: 8px;
+}
+
+.explanation-text {
+    color: #285e61;
+    line-height: 1.6;
+}
+
+.progress-tracker {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 32px;
+}
+
+.progress-bar-container {
+    margin-top: 12px;
+}
+
+.timer {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

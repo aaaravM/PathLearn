@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn — Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+<body class="page-landing">
+    <main class="main-content" style="max-width: 560px;">
+        <div class="card" style="padding:32px; margin-top:60px;">
+            <h1>Sign in to PathLearn</h1>
+            <p class="subtext">Use Firebase email/password — configured with your own keys.</p>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:24px;">
+                <input id="authEmail" type="email" placeholder="email@example.com" style="padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white;">
+                <input id="authPassword" type="password" placeholder="password" style="padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:white;">
+                <button class="btn btn-primary" id="signinBtn">Sign In / Sign Up</button>
+                <button class="btn btn-secondary" id="dashboardBtn">Skip to Dashboard</button>
+            </div>
+            <p class="subtext" style="margin-top:12px;">After Firebase auth succeeds, we call <code>/api/auth/session</code> to bind the backend session.</p>
+        </div>
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // Replace with your Firebase project settings (Firebase Console -> Project Settings)
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDPgUFlaAjxbXAktgr5hL7zQ45MG2AiHys",
+            authDomain: "pathlearn-d54bb.firebaseapp.com",
+            projectId: "pathlearn-d54bb",
+            storageBucket: "pathlearn-d54bb.firebasestorage.app",
+            messagingSenderId: "633493932218",
+            appId: "1:633493932218:web:610f175d7c71e34fce5a83",
+            measurementId: "G-64708WJXTB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const emailEl = document.getElementById('authEmail');
+        const passEl = document.getElementById('authPassword');
+        document.getElementById('dashboardBtn').addEventListener('click', () => window.location.href = '/dashboard');
+
+        document.getElementById('signinBtn').addEventListener('click', async () => {
+            const email = emailEl.value.trim();
+            const pass = passEl.value.trim();
+            if (!email || !pass) {
+                window.showGlobalToast('Enter email and password', 'info');
+                return;
+            }
+            try {
+                let userCred;
+                try {
+                    userCred = await signInWithEmailAndPassword(auth, email, pass);
+                } catch (err) {
+                    userCred = await createUserWithEmailAndPassword(auth, email, pass);
+                }
+                const user = userCred.user;
+                await fetch('/api/auth/session', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        uid: user.uid,
+                        name: user.email.split('@')[0],
+                        career_path: '',
+                        location: ''
+                    })
+                });
+                window.location.href = '/dashboard';
+            } catch (err) {
+                console.error(err);
+                window.showGlobalToast('Auth failed: check Firebase config', 'error');
+            }
+        });
+    </script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

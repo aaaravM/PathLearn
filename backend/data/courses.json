@@ -1,0 +1,144 @@
+{
+  "mathematics": {
+    "name": "Mathematics",
+    "icon": "math",
+    "tracks": [
+      {"id": "elem_math", "name": "Elementary Math", "level": "K-5", "units": 12},
+      {"id": "pre_algebra", "name": "Pre-Algebra", "level": "6-8", "units": 15},
+      {"id": "algebra_1", "name": "Algebra I", "level": "8-9", "units": 18},
+      {"id": "geometry", "name": "Geometry", "level": "9-10", "units": 16},
+      {"id": "algebra_2", "name": "Algebra II", "level": "10-11", "units": 20},
+      {"id": "precalculus", "name": "Pre-Calculus", "level": "11-12", "units": 18},
+      {"id": "calculus_ab", "name": "AP Calculus AB", "level": "12", "units": 22},
+      {"id": "calculus_bc", "name": "AP Calculus BC", "level": "12", "units": 24},
+      {"id": "statistics", "name": "AP Statistics", "level": "11-12", "units": 16},
+      {"id": "linear_algebra", "name": "Linear Algebra", "level": "College", "units": 14},
+      {"id": "diff_equations", "name": "Differential Equations", "level": "College", "units": 16}
+    ]
+  },
+  "science": {
+    "name": "Science",
+    "icon": "science",
+    "tracks": [
+      {"id": "elem_science", "name": "Elementary Science", "level": "K-5", "units": 10},
+      {"id": "earth_science", "name": "Earth Science", "level": "6-8", "units": 12},
+      {"id": "biology", "name": "Biology", "level": "9-10", "units": 18},
+      {"id": "chemistry", "name": "Chemistry", "level": "10-11", "units": 20},
+      {"id": "physics", "name": "Physics", "level": "11-12", "units": 18},
+      {"id": "ap_biology", "name": "AP Biology", "level": "11-12", "units": 24},
+      {"id": "ap_chemistry", "name": "AP Chemistry", "level": "11-12", "units": 22},
+      {"id": "ap_physics_1", "name": "AP Physics 1", "level": "11-12", "units": 20},
+      {"id": "ap_physics_c", "name": "AP Physics C", "level": "12", "units": 22},
+      {"id": "environmental", "name": "Environmental Science", "level": "11-12", "units": 14},
+      {"id": "anatomy", "name": "Anatomy & Physiology", "level": "College", "units": 16},
+      {"id": "organic_chem", "name": "Organic Chemistry", "level": "College", "units": 20},
+      {"id": "microbiology", "name": "Microbiology", "level": "College", "units": 14}
+    ]
+  },
+  "computer_science": {
+    "name": "Computer Science",
+    "icon": "cs",
+    "tracks": [
+      {"id": "intro_cs", "name": "Intro to Computer Science", "level": "9-12", "units": 12},
+      {"id": "cs_principles", "name": "AP CS Principles", "level": "10-12", "units": 16},
+      {"id": "cs_a", "name": "AP CS A (Java)", "level": "11-12", "units": 18},
+      {"id": "python_prog", "name": "Python Programming", "level": "All", "units": 14},
+      {"id": "web_dev", "name": "Web Development", "level": "All", "units": 16},
+      {"id": "data_structures", "name": "Data Structures", "level": "College", "units": 18},
+      {"id": "algorithms", "name": "Algorithms", "level": "College", "units": 16},
+      {"id": "ai_ml", "name": "AI & Machine Learning", "level": "College", "units": 20},
+      {"id": "cybersecurity", "name": "Cybersecurity", "level": "College", "units": 14}
+    ]
+  },
+  "social_studies": {
+    "name": "Social Studies & History",
+    "icon": "history",
+    "tracks": [
+      {"id": "social_k1", "name": "Community & Maps (K-1)", "level": "K-1", "units": 8},
+      {"id": "social_elem", "name": "Early Civics & Geography", "level": "2-5", "units": 10},
+      {"id": "social_middle", "name": "World Regions & Cultures", "level": "6-8", "units": 12},
+      {"id": "world_history", "name": "World History", "level": "9-10", "units": 16},
+      {"id": "us_history", "name": "US History", "level": "10-11", "units": 18},
+      {"id": "ap_world", "name": "AP World History", "level": "10", "units": 22},
+      {"id": "ap_us", "name": "AP US History", "level": "11", "units": 24},
+      {"id": "ap_euro", "name": "AP European History", "level": "11-12", "units": 22},
+      {"id": "government", "name": "Government & Politics", "level": "12", "units": 14},
+      {"id": "ap_gov", "name": "AP Government", "level": "12", "units": 16},
+      {"id": "psychology", "name": "Psychology", "level": "11-12", "units": 14},
+      {"id": "ap_psych", "name": "AP Psychology", "level": "11-12", "units": 18},
+      {"id": "sociology", "name": "Sociology", "level": "College", "units": 12}
+    ]
+  },
+  "economics_business": {
+    "name": "Economics & Business",
+    "icon": "business",
+    "tracks": [
+      {"id": "intro_econ", "name": "Introduction to Economics", "level": "11-12", "units": 12},
+      {"id": "ap_micro", "name": "AP Microeconomics", "level": "11-12", "units": 14},
+      {"id": "ap_macro", "name": "AP Macroeconomics", "level": "11-12", "units": 14},
+      {"id": "accounting", "name": "Accounting Fundamentals", "level": "11-12", "units": 16},
+      {"id": "finance", "name": "Personal Finance", "level": "11-12", "units": 10},
+      {"id": "business", "name": "Business Management", "level": "College", "units": 14},
+      {"id": "marketing", "name": "Marketing Principles", "level": "College", "units": 12},
+      {"id": "entrepreneurship", "name": "Entrepreneurship", "level": "College", "units": 14}
+    ]
+  },
+  "languages": {
+    "name": "World Languages",
+    "icon": "language",
+    "tracks": [
+      {"id": "spanish_1", "name": "Spanish I", "level": "9-12", "units": 12},
+      {"id": "spanish_2", "name": "Spanish II", "level": "9-12", "units": 14},
+      {"id": "ap_spanish", "name": "AP Spanish", "level": "11-12", "units": 18},
+      {"id": "french_1", "name": "French I", "level": "9-12", "units": 12},
+      {"id": "french_2", "name": "French II", "level": "9-12", "units": 14},
+      {"id": "mandarin", "name": "Mandarin Chinese", "level": "9-12", "units": 16},
+      {"id": "latin", "name": "Latin", "level": "9-12", "units": 14}
+    ]
+  },
+  "arts": {
+    "name": "Arts & Humanities",
+    "icon": "arts",
+    "tracks": [
+      {"id": "art_history", "name": "Art History", "level": "10-12", "units": 12},
+      {"id": "ap_art", "name": "AP Art History", "level": "11-12", "units": 16},
+      {"id": "music_theory", "name": "Music Theory", "level": "9-12", "units": 14},
+      {"id": "ap_music", "name": "AP Music Theory", "level": "11-12", "units": 18},
+      {"id": "philosophy", "name": "Introduction to Philosophy", "level": "College", "units": 12},
+      {"id": "literature", "name": "World Literature", "level": "11-12", "units": 14}
+    ]
+  },
+  "law_policy": {
+    "name": "Law & Public Policy",
+    "icon": "law",
+    "tracks": [
+      {"id": "intro_law", "name": "Introduction to Law", "level": "College", "units": 14},
+      {"id": "constitutional_law", "name": "Constitutional Law", "level": "College", "units": 16},
+      {"id": "criminal_law", "name": "Criminal Law", "level": "College", "units": 14},
+      {"id": "public_policy", "name": "Public Policy Analysis", "level": "College", "units": 12},
+      {"id": "international_law", "name": "International Law", "level": "College", "units": 14}
+    ]
+  },
+  "engineering": {
+    "name": "Engineering",
+    "icon": "engineering",
+    "tracks": [
+      {"id": "intro_engineering", "name": "Introduction to Engineering", "level": "9-12", "units": 12},
+      {"id": "mechanical_eng", "name": "Mechanical Engineering Principles", "level": "College", "units": 16},
+      {"id": "electrical_eng", "name": "Electrical Engineering Basics", "level": "College", "units": 18},
+      {"id": "civil_eng", "name": "Civil Engineering", "level": "College", "units": 14},
+      {"id": "robotics", "name": "Robotics & Automation", "level": "11-12", "units": 16}
+    ]
+  },
+  "health_medicine": {
+    "name": "Health & Medicine",
+    "icon": "health",
+    "tracks": [
+      {"id": "health_science", "name": "Health Science", "level": "9-12", "units": 12},
+      {"id": "nutrition", "name": "Nutrition Science", "level": "11-12", "units": 10},
+      {"id": "medical_terminology", "name": "Medical Terminology", "level": "College", "units": 8},
+      {"id": "pharmacology", "name": "Introduction to Pharmacology", "level": "College", "units": 14},
+      {"id": "public_health", "name": "Public Health", "level": "College", "units": 12}
+    ]
+  }
+}

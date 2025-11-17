@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathLearn Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+</head>
+<body class="page-dashboard">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-meteor"></i>
+                <span>PathLearn</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/courses" class="nav-link">Courses</a>
+                <a href="/practice" class="nav-link">Practice</a>
+                <a href="/community" class="nav-link">Resources</a>
+                <a href="/analytics" class="nav-link">Analytics</a>
+            </div>
+            <div class="nav-actions">
+                <a id="authSignIn" class="btn btn-secondary" href="/auth" style="display:none;">Sign in</a>
+                <button id="authSignOut" class="btn btn-secondary" style="display:none;">Sign out</button>
+                <a href="/profile" class="profile-link">
+                    <div class="profile-avatar"><i class="fas fa-user"></i></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="dashboard" data-reveal>
+            <div class="dashboard-hero gradient-card">
+                <div>
+                    <p class="eyebrow">AI-Powered Learning Pulse</p>
+                    <h1>Welcome back, <span id="student-name">Pathfinder</span>.</h1>
+                    <p class="subtext" id="student-tagline">
+                        Your DRL tutor is recalibrating the curriculum in real time.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" id="resumeLessonBtn">
+                            Continue Adaptive Lesson
+                        </button>
+                        <a href="/courses" class="btn btn-secondary btn-large">
+                            Explore Courses
+                        </a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div class="metric">
+                            <span>Retention Probability</span>
+                            <strong id="stat-retention">--%</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Mastery Streak</span>
+                            <strong id="stat-streak">-- days</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Adaptive Difficulty</span>
+                            <strong id="stat-difficulty">Level --</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="orbit-card">
+                        <span class="label">Career Trajectory</span>
+                        <p id="career-path">Select a career path in settings.</p>
+                        <div class="career-points">
+                            <div class="point active">Foundation</div>
+                            <div class="point">Convergence</div>
+                            <div class="point">Launch</div>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <p id="insight-copy">Monitoring your focus sessions...</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="insight-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-grid" data-reveal>
+                <div class="stat-card">
+                    <span class="stat-label">Lessons Completed</span>
+                    <div class="stat-value" id="stat-lessons">--</div>
+                    <p>Across math, science, CS, humanities, and more.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Mastery Accuracy</span>
+                    <div class="stat-value" id="stat-accuracy">--%</div>
+                    <p>Measured per question, per hesitation, per hint.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Focus Time</span>
+                    <div class="stat-value" id="stat-focus">--h</div>
+                    <p>Total deep work hours logged.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Learning Tempo</span>
+                    <div class="stat-value" id="stat-avg-time">--s</div>
+                    <p>Average seconds per lesson.</p>
+                </div>
+            </div>
+
+            <div class="grid-2" data-reveal>
+                <div class="card journey-card">
+                    <div class="card-header">
+                        <div>
+                            <p class="eyebrow">Autonomous Learning Journey</p>
+                            <h2>Next Up</h2>
+                        </div>
+                        <a href="/courses" class="btn btn-secondary">Adjust Path</a>
+                    </div>
+                    <div class="timeline" id="timeline-list"></div>
+                </div>
+                <div class="card career-card">
+                    <div class="card-header">
+                        <div>
+                            <p class="eyebrow">Career Personalization</p>
+                            <h2>Your Blueprint</h2>
+                        </div>
+                    </div>
+                    <form class="career-form" id="careerForm">
+                        <select id="careerPathSelect"></select>
+                        <button type="submit" class="btn btn-primary">Update Career DNA</button>
+                    </form>
+                    <div class="career-badges">
+                        <span class="tag"><i class="fas fa-microscope"></i> Science</span>
+                        <span class="tag"><i class="fas fa-code"></i> CS</span>
+                        <span class="tag"><i class="fas fa-scale-balanced"></i> Law</span>
+                        <span class="tag"><i class="fas fa-leaf"></i> Sustainability</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-reveal>
+                <div class="card-header">
+                    <div>
+                        <p class="eyebrow">Curriculum Universe</p>
+                        <h2>Tracked Courses</h2>
+                    </div>
+                    <a href="/courses" class="btn btn-secondary">View catalog</a>
+                </div>
+                <div class="course-grid" id="courseGrid"></div>
+            </div>
+
+            <div class="grid-2" data-reveal>
+                <div class="card project-card">
+                    <div class="card-header">
+                        <div>
+                            <p class="eyebrow">Studio Projects</p>
+                            <h2>Signal Your Mastery</h2>
+                        </div>
+                        <a href="/community" class="btn btn-secondary">Showcase</a>
+                    </div>
+                    <div class="project-list" id="projectList"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <p class="eyebrow">Weekly Momentum</p>
+                            <h2>Performance Snapshot</h2>
+                        </div>
+                    </div>
+                    <div style="height:260px;">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <span>AI Tutor</span>
+            <button class="close-chat" id="closeChatBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Get instant help...">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/dashboard.js"></script>
+</body>
+</html>
